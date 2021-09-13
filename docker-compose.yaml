@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: test-frontend
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    ports:
+      - 3000:3000
+    env_file: .env
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
